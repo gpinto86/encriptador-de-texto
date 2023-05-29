@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incriptador de Texto</title>
-    <link red="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="container">
-    <div class="incriptar">
-        <textarea 
-        name="texto" 
-        class="texto" 
-        id="texto" 
-        cols="30" 
-        rows="10" 
-        placeholder="Ingresa el texto aquí"></textarea>
-</div>
-<div class="terminos">
-    <p> Solo ingresar letras minúsculas y sin acentos</p>
-</div>
-<div class="botones">
-        <button 
-        class="btn-incriptar" 
-        type="button" 
-        onclick="
-        encriptar()">Encriptar
-    </button>
-        <button 
-        class="btn-desencriptar" 
-        type="button" 
-        onclick="
-        encriptar()">Desencriptar
-    </button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="styles.css">
+        <title>Encriptador de texto</title>
 
-    </div>
-
-<div class="incriptado">
-    <img src="" alt=""id=desbloqueo>
-    <div class="mensaje-encriptado" id="mensaje-encriptado">
-        <h2 id="titulo-mensaje" >Ningún mensaje encontrado</h2>
-        <p id="parrafo">Ingresa el texto que deseas incriptar o desencriptar</p>
-        <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje">
-        </textarea>
-        </div>
-    </div>
-</div>
-</body>
-<script src="index.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+        <script src="https://kit.fontawesome.com/56435b6968.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="img/Alura.png" alt="logo Alura"></a>
+        </header>
+        <main>
+            <section class="input">
+                <textarea class="input-text" name="input-text" id="input-text" autocomplete="off" placeholder="Ingrese el texto aquí"></textarea>
+                <div>
+                    <p>Sólo letras minúsculas y sin acentos</p>
+                    <div class="input-buttons">
+                        <button class="input-buttons-button" onclick="encrypt()">Encriptar</button>
+                        <button class="input-buttons-button button-main" onclick="desencrypt()">Desencriptar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="output">
+                <div class="output-not-found" id="not-found">
+                    <img class="output-not-found-doll" src="img/Muñeco.png" alt="imagen de muñeco con lupa">
+                    <div class="output-not-found-text-box">
+                        <p>Por ahora ningún mensaje fue encontrado</p>
+                        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                </div>
+                <div class="output-result" id="result">
+                    <p class="output-result-text" id="output-text"></p>
+                    <div class="output-result-buttons">
+                        <button class="output-result-buttons-button" onclick="copy()">Copiar</button>
+                        <button class="output-result-buttons-button button-accent-2" id="paste" onclick="paste()">Pegar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Diseño por gpinto para Alura ONE
+                <a target="_blank" href="https://github.com/gpinto86"><i class="fa-brands fa-github"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/gonzalo-pinto-salazar/"><i class="fa-brands fa-linkedin"></i></a>
+            </p>
+        </footer>
+        <script src="index.js"></script>
+    </body>
 </html>
